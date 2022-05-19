@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>로그인</title>
+</head>
+<body>
+	<!-- <form> 태그 
+		1) method : 데이터를 전송할 때 전송 방법 지정함.
+					GET 또는 POST로 지정함.(아무것도 지정하지 않으면 GET 방식)
+		2) action : 데이터를 전송할 서블릿이나 JSP를 지정함.
+					서블릿으로 전송할 때는 매핑 이름을 사용함.
+	-->
+	<form name="formLogin" action="login" method="get" enctype="UTF-8">
+		아이디: <input type="text" name="user_id" /><br>
+		비밀번호 : <input type="password" name="user_pw" /><br/>
+		<input type="submit" value = "로그인" />
+		<input type="reset" value="다시입력" />
+	</form>
+</body>
+</html>
