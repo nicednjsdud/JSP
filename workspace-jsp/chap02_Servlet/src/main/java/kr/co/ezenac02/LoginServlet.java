@@ -32,7 +32,14 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("doGet(로그인) 메서드 호출");
+//		System.out.println("doGet(로그인) 메서드 호출");
+		request.setCharacterEncoding("utf-8");// 전송된 데이터를 utf-8로 인코딩함
+		/* getParameter()을 이용해 <input>태그의 name속성 값으로 전송된 value를 받아옴 */
+		String userId = request.getParameter("user_id");
+		String userPw = request.getParameter("user_pw");
+		
+		System.out.println("아이디: "+userId);
+		System.out.println("비밀번호: "+userPw);
 	}
 
 	/**

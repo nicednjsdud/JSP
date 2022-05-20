@@ -12,7 +12,11 @@
 		2) action : 데이터를 전송할 서블릿이나 JSP를 지정함.
 					서블릿으로 전송할 때는 매핑 이름을 사용함.
 	-->
-	<form name="formLogin" action="login" method="get" enctype="UTF-8">
+	
+	<!-- action="login" 입력된 데이터를 서블릿 매핑이름이 login인 서블릿으로 전송함 -->
+	<!-- name="user_id" 텍스트 박스에 입력된 ID를 user_id로 전송함 -->
+	<!-- name="user_pw" 텍스트 박스에 입력된 비밀번호를 user_pw로 전송함 -->
+	<form name="formLogin" action="login2" method="get" enctype="UTF-8">
 		아이디: <input type="text" name="user_id" /><br>
 		비밀번호 : <input type="password" name="user_pw" /><br/>
 		<input type="submit" value = "로그인" />
