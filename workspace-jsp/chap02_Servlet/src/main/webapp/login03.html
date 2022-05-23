@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>post방식으로 서블릿에 요청</title>
-	<script type ="text/javascript">
+
+	<script type="text/javascript">
 		function fn_validate() {
 			let frmLogin = document.frmLogin		// <form>태그의 name속성 => <form> 태그 객체를 받아옴
 			let user_id = frmLogin.user_id.value	// <form>태그 내 <input>태그의 name속성으로
@@ -15,7 +16,7 @@
 			}
 			else{
 				frmLogin.method = "post"			// <form>태그의 전송방식을 post로 설정함
-				frmLogin.action = "login4"			// action 속성을 서블릿 매핑 이름인 login4로 설정
+				frmLogin.action = "login5"			// action 속성을 서블릿 매핑 이름인 login4로 설정
 				frmLogin.submit()					// 자바스크립트에서 서블릿으로 전송함
 			}
 		}
@@ -23,13 +24,14 @@
 	</script>
 </head>
 <body>
-	<form name="frmLogin" action="login4" method="post" enctype="UTF-8">
+	<form name="frmLogin" action="login5" method="post" enctype="UTF-8">
 		아이디: <input type="text" name="user_id" /><br>
 		비밀번호 : <input type="password" name="user_pw" /><br/>
 		<br/><br/>
-		<input type="button" value = "로그인"  onclick = "fn_validate()"/>
+		<input type="button" value ="로그인"  onclick = "fn_validate()"/>
 		<input type="reset" value="다시입력" />
+		<!-- hidden을 이용해 화면에는 보이지 않으면서 값을 서블릿으로 전송함 -->
+		<input type="hidden" name="user_address" value="서울시 강남구" />
 	</form>
-
 </body>
 </html>
