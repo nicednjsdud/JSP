@@ -1,4 +1,4 @@
-package kr.co.ezenac.member;
+package kr.co.ezenac.member02;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class MemberServlet
  */
-/* @WebServlet("/member") */
+@WebServlet("/member")
 public class MemberServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

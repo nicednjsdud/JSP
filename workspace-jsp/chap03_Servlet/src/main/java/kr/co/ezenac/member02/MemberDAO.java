@@ -1,4 +1,4 @@
-package kr.co.ezenac.member;
+package kr.co.ezenac.member02;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -29,8 +29,6 @@ public class MemberDAO {
 			conn = DriverManager.getConnection(URL,USER,PWD);
 			System.out.println("Connection 생성 성공");
 			
-			stmt = conn.createStatement();
-			System.out.println("Statement 생성 성공");
 			
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -58,7 +56,9 @@ public class MemberDAO {
 		System.out.println(query);
 		
 		try {
-			rs = stmt.executeQuery(query);		// SQL문으로 회원 정보를 조회함
+			pstmt = conn.prepareStatement(query);	//prepareStatement()메서드에 SQL문을 전달해 객체생성
+			
+			rs = pstmt.executeQuery();		// 미리 설정한 SQL문 실행
 			while(rs.next()) {
 				String id = rs.getString("ID");
 				String pw = rs.getString("PWD");
@@ -78,8 +78,6 @@ public class MemberDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		
-		
 		return list;			// 조회한 레코드의 개수만큼 MemberVO 객체를 저장한 ArrayList를 반환함.
 	}
 }

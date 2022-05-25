@@ -26,6 +26,7 @@
     <!--
     <Manager pathname="" />
     -->
+<<<<<<< Updated upstream:workspace-jsp/Servers/Tomcat v9.0 Server at localhost-config/context.xml
       <!-- 
 
 	    name : DataSource에 대한 JNDI 이름
@@ -67,4 +68,17 @@
     /> 
 
 
+=======
+      <Resource 
+    	name="jdbc/oracle" 
+    	auth="Conainer" 
+    	type="javax.sql.DataSource" 
+    	driverClassName="oracle.jdbc.driver.OracleDriver"
+    	url="jdbc:oracle:thin:@localhost:1521:XE"
+    	username="ezen"
+    	password="0824"
+    	maxActive="50"
+    	maxWait="-1"
+    />
+>>>>>>> Stashed changes:workspace-jsp/Servers/Model1-config/context.xml
 </Context>

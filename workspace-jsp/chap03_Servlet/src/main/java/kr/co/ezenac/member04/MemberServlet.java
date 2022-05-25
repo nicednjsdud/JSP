@@ -1,4 +1,4 @@
-package kr.co.ezenac.member;
+package kr.co.ezenac.member04;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,23 +11,33 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class MemberServlet
- */
-/* @WebServlet("/member") */
+@WebServlet("/member3")
 public class MemberServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setCharacterEncoding("utf-8");
+	
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
+		MemberDAO dao = new MemberDAO();
 		
-		MemberDAO dao = new MemberDAO();			// SQL문으로 조회할 MemberDAO 객체를 생성함
-		List<MemberVO> list = dao.listMembers();	// listMembers() 메서드로 회원 정보를 조회함
+		String command = request.getParameter("command");		// command 값 받아옴
+		if(command !=null && command.equals("addMember")) {		// 회원 가입창에서 전송된 command가 addMember라면
+			String _id = request.getParameter("id");			// 전송된 값들을 받아옴
+			String _pwd = request.getParameter("pwd");
+			String _name = request.getParameter("name");
+			String _email = request.getParameter("email");		// 회원가입창에서 전송된 값들을 얻어옴
+			
+			MemberVO vo = new MemberVO();
+			vo.setId(_id);
+			vo.setPwd(_pwd);
+			vo.setName(_name);
+			vo.setEmail(_email);
+			
+			dao.addMember(vo);
+		}
+		
+		List<MemberVO> list = dao.listMembers();
 		
 		out.print("<html>");
 		out.print("<body>");
@@ -55,6 +65,6 @@ public class MemberServlet extends HttpServlet {
 		
 		out.print("</table></html>");
 		out.print("</body>");
+		
 	}
-
 }
