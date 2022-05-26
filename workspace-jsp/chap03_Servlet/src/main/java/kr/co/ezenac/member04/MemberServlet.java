@@ -36,6 +36,10 @@ public class MemberServlet extends HttpServlet {
 			
 			dao.addMember(vo);
 		}
+		else if(command !=null && command.equals("delMember")) {
+			String id = request.getParameter("id");
+			dao.delMember(id);
+		}
 		
 		List<MemberVO> list = dao.listMembers();
 		
@@ -43,11 +47,12 @@ public class MemberServlet extends HttpServlet {
 		out.print("<body>");
 		out.print("<table border=1><tr align='center' bgcolor='lightgreen'>");
 		
+		
 		out.print("<td>아이디</td>");
 		out.print("<td>비밀번호</td>");
 		out.print("<td>이름</td>");
 		out.print("<td>이메일</td>");
-		out.print("<td>가입일</td></tr>");
+		out.print("<td>가입일</td><td>삭제</td></tr>");
 		
 		for(int i=0;i<list.size();i++) {
 			MemberVO memberVO = list.get(i);	// 조회한 회원 정보를 for문 <tr> 태그 이용해서 출력함
@@ -60,7 +65,8 @@ public class MemberServlet extends HttpServlet {
 			out.print("<td>"+pw+"</td>");
 			out.print("<td>"+name+"</td>");
 			out.print("<td>"+email+"</td>");
-			out.print("<td>"+joindate+"</td></tr>");
+			out.print("<td>"+joindate+"</td><td>"+"<a href='/chap03_Servlet/member3?command=delMember&id="+id+" '>삭제</a></td>");
+			out.print("</tr>");
 		}
 		
 		out.print("</table></html>");

@@ -103,11 +103,35 @@ public class MemberDAO {
 				String query = "INSERT INTO T_member (ID,PWD,NAME,EMAIL) VALUES (?,?,?,?)";
 				System.out.println("PrepareStatement : "+query);
 				
-				//
+				pstmt = conn.prepareStatement(query);
+
+				pstmt.setString(1,id);      // insert문의 ?에 순서대로 회원정보 세팅
+				pstmt.setString(2,pwd);     
+				pstmt.setString(3,name);
+				pstmt.setString(4,email);
+
+				pstmt.executeUpdate();      // 회원정보 테이블의 추가됨
+				close();
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void delMember(String id) {
+		try {
+			conn = dataFactory.getConnection();
+			String query = "DELETE FROM T_MEMBER WHERE ID =?";//delete 문을 문자열로 만듬
+			System.out.println(query);
+			
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, id);// 첫번쨰 '?'에 전달된 ID를 인자로 넣음
+			pstmt.executeUpdate(); // delete 문실행 => 테이블에서 해당 id 회원 정보 삭제
+			close();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
 	}
 }
 
