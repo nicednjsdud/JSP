@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.catalina.util.URLEncoder;
 
-@WebServlet("/get")
+@WebServlet("/get2")
 public class GetCookieValue extends HttpServlet {
 	
 	@Override
