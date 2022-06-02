@@ -141,7 +141,20 @@ public class MemberDAO {
 		try {
 			conn = dataFactory.getConnection();
 			
-			// String query = "";
+			// ID와 비밀번호가 존재하면 TRUE를, 존재하지 않으면 FALSE를 조회함
+			String query = "SELECT DECODE(COUNT(*),1,'TRUE','FALSE') AS RESULT FROM T_MEMBER "+
+					"WHERE ID=? AND PWD = ?";
+			// 전달된 id와 비밀번호를 이용해 sql문으로 db에 조회
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pwd);
+			rs = pstmt.executeQuery();
+			
+			// 커서를 첫번째 레코드로 위치시킴
+			rs.next();
+			result =  Boolean.parseBoolean(rs.getString("result"));
+			System.out.println("result = "+result);
+			
 			
 		} catch (SQLException e) {
 
