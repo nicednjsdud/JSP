@@ -15,5 +15,11 @@
 		<li>나이 : <%= request.getParameter("param2") %> </li>
 		<li>나이 : <%= request.getParameter("param3") %> </li>
 	</ul>
+	<!-- include한 jsp페이지와는 변수를 직접 공유 불가 -->
+	<jsp:include page="inc/paramInclude.jsp"  >
+		<jsp:param value="경기도 양평군" name="Loc1"/>
+		<jsp:param value="용문면" name="Loc2"/>
+	</jsp:include>
+	<!-- jsp:param include한 페이지로도 매개변수 전달 가능 -->
 </body>
 </html>
