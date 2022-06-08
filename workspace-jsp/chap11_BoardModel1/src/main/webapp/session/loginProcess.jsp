@@ -1,4 +1,6 @@
 
+<%@page import="kr.co.ezenac.model1.membership.dto.MemberDTO"%>
+<%@page import="kr.co.ezenac.model1.membership.dao.MemberDAO"%>
 <%@page import="kr.co.ezenac.model1.board.dto.BoardDTO"%>
 <%@page import="kr.co.ezenac.model1.board.dao.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -14,8 +16,8 @@
 	String oracleId = application.getInitParameter("OracleId");
 	String oralcePwd = application.getInitParameter("OraclePw");
 	
-	/* BoardDAO dao = new BoardDAO(orac oracleURL,oracleId,oralcePwd);
-	BoardDTO memberdto = dao.get(userId, userPw);
+	MemberDAO dao = new MemberDAO(oracleDriver,oracleURL,oracleId,oralcePwd);
+	MemberDTO memberdto = dao.getMember(userId, userPw);
 	dao.close();
 	// 로그인 성공 여부 처리
 	if (memberdto.getId() !=null){
@@ -30,5 +32,5 @@
 		request.getRequestDispatcher("loginForm.jsp").forward(request, response);
 	}
 	
-	 */
+	
 %>

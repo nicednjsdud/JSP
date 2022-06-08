@@ -30,10 +30,10 @@ public class BoardDAO extends JDBConnection {		// DB 연결을 위한 클래스 
 		}
 		
 		 try {
-			stmt = conn.createStatement();		// 쿼리문 생성
-			rs = stmt.executeQuery(query);		// 쿼리문 실행
+			stmt = conn.createStatement();		// 쿼리문 실행하기 위해 Statement 객체 생성
+			rs = stmt.executeQuery(query);		// SELECT 쿼리문 실행. 실행 결과는 Result객체에 담음
 			rs.next();							// 커서를 첫번째 행으로 이동
-			totalCount = rs.getInt(1);			// 첫번째 컬럼값을 가져옴
+			totalCount = rs.getInt(1);			// ResultSet객체의 1번(첫번째) 인덱스의 결과를 정수로 가져옴
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -78,4 +78,119 @@ public class BoardDAO extends JDBConnection {		// DB 연결을 위한 클래스 
 		return bbs;
 	}
 	
+	// 게시글 데이터를 받아 DB에 추가함
+	public int insertWrite(BoardDTO boardDTO) {
+		int result = 0;
+		
+		String query = "INSERT INTO board (num,title,content,id,visitcount) "
+				+ "VALUES (seq_board_num.nextval, ?, ?, ?, 0)";
+		
+		try {
+			psmt = conn.prepareStatement(query);
+			
+			psmt.setString(1, boardDTO.getTitle());
+			psmt.setString(2,boardDTO.getContent());
+			psmt.setString(3, boardDTO.getId());
+			
+			result = psmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("게시물 입력 중 예외 발생");
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	// 선택한 게시물 상세 내용 반환하기
+	public BoardDTO selectView(String num) {		// 매개변수로 전달한 일렬번호
+		BoardDTO dto = new BoardDTO();
+		
+		// 쿼리문 준비
+		/*
+		 *  member 테이블과 조인
+		 *  - board 테이블에는 작성자 아이디만 저장되므로 
+		 *    이름을 출력하기 위해서는 member 테이블과 조인 필요
+		 */
+		String query = "SELECT b.*,m.NAME "
+						+"FROM MEMBER m "
+						+"INNER JOIN BOARD b ON m.ID = b.ID "
+						+"WHERE num = ?";
+		try {
+			psmt = conn.prepareStatement(query);
+			psmt.setString(1, num);		// 인파라미터를 일렬번호로 설정
+			rs = psmt.executeQuery();
+			
+			// 결과 처리
+			if(rs.next()) {			// ResultSet 객체로 반환된 행을 확인
+				dto.setNum(rs.getString(1));
+				dto.setTitle(rs.getString(2));
+				dto.setContent(rs.getString(3));
+				dto.setId(rs.getString("id"));
+				dto.setPostdate(rs.getDate("postdate"));
+				dto.setVisitcount(rs.getString("visitcount"));
+				dto.setName(rs.getString("name"));	 	// DTO 객체에 저장함 
+			}
+			
+		} catch (SQLException e) {
+			System.out.println("게시물 상세보기 예외 발생");
+			e.printStackTrace();
+		}
+		
+		return dto;								// dto 반환 
+	}
+	
+	// 선택된 게시물의 조회수 1 증가시킴
+	public void updateVisitCount(String num) {		// 조회수 증가시킬 게시물의 일련번호를 매개변수로 받음
+		
+		String query="UPDATE BOARD SET VISITCOUNT = VISITCOUNT +1 WHERE num = ?";
+		
+		try {
+			psmt = conn.prepareStatement(query);
+			psmt.setString(1, num);					// 인파라미터를 일련번호로 설정
+			psmt.executeQuery();					// 쿼리 실행
+			
+		}catch(SQLException e){
+			System.out.println("게시물 조회수 증가 중 예외 발생");
+			e.printStackTrace();
+		}
+		
+	}
+	
+	// 지정한 게시물 수정함
+	public int updateEdit(BoardDTO dto) {
+		int result = 0;
+		
+		//
+		
+		return result;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

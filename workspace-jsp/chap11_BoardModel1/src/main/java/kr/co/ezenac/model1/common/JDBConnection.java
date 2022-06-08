@@ -14,7 +14,17 @@ public class JDBConnection {
 	public Statement stmt;
 	public PreparedStatement psmt;
 	public ResultSet rs;
-
+	
+	
+		public JDBConnection(String driver, String url,String id, String pwd) {
+			try {
+				Class.forName(driver);
+				conn = DriverManager.getConnection(url,id,pwd);
+			} catch (ClassNotFoundException | SQLException e) {
+				
+				e.printStackTrace();
+			}
+		}
 	public JDBConnection(ServletContext application) {
 		// JDBC 드라이버 로드
 		String driver = application.getInitParameter("OracleDriver");
@@ -26,7 +36,7 @@ public class JDBConnection {
 			String id = application.getInitParameter("OracleId");
 			String pwd = application.getInitParameter("OraclePw");
 			conn = DriverManager.getConnection(url,id,pwd);
-			System.out.println("db 연결 성공! - 매개변수 생성자");
+			System.out.println("db 연결 성공! - 매개변수 application");
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
@@ -37,9 +47,9 @@ public class JDBConnection {
 			if (rs != null)
 				rs.close();
 			if (psmt != null)
-				rs.close();
+				psmt.close();
 			if (conn != null)
-				rs.close();
+				conn.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();

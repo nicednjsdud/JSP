@@ -14,7 +14,7 @@
  if (session.getAttribute("UserId") == null) { // 로그인 정보가 없다면
  %> <a href="../session/loginForm.jsp">로그인</a> <%
  } else {
- %> <a href="../session/loginout.jsp">로그아웃</a> <%
+ %> <a href="../session/logout.jsp" >로그아웃</a> <%
  }
  %> &nbsp;&nbsp;&nbsp; <a href="../board/list.jsp">게시판(페이징 X)</a>
 			</td>
