@@ -14,6 +14,18 @@
 <head>
 <meta charset="UTF-8">
 <title>게시물 상세보기</title>
+<script type="text/javascript">
+function deletePost() {
+	let confirmed = window.confirm("정말로 삭제하시겠습니까?")
+	
+	if(confirmed){
+		let form = document.writeFrm
+		form.method = "post"				// 전송방식
+		form.action = "deleteProcess.jsp"	// 전송 경로
+		form.submit()						// 폼값 전송
+	}
+}
+</script>
 </head>
 <body>
 	<jsp:include page="../common/link.jsp" />
@@ -49,7 +61,7 @@
 						if (session.getAttribute("UserId") !=null && session.getAttribute("UserId").toString().equals(dto.getId())){
 							%> 
 								<button type="button" onclick="location.href='edit.jsp?num=<%=dto.getNum() %>'" >수정하기</button>
-								<button type="button" onclick="" >삭제하기</button>
+								<button type="button" onclick="deletePost()" >삭제하기</button>
 							<% 
 						}
 					%>

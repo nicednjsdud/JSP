@@ -40,7 +40,7 @@
 	<jsp:include page="../common/link.jsp"></jsp:include>
 	<h2> 회원 게시판 - 수정하기</h2>
 	<form action="editProcess.jsp" name="writeFrm" method="post" onsubmit="return validateForm(this)">
-		<input type="hidden" value="" />	
+		<input type="hidden" name="num" value="<%=dto.getNum() %>" />	
 		
 		<table border="1" width="90%">
 			<tr>

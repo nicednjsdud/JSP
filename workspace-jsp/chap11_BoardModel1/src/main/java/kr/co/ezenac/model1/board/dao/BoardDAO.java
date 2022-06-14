@@ -160,8 +160,43 @@ public class BoardDAO extends JDBConnection {		// DB 연결을 위한 클래스 
 	public int updateEdit(BoardDTO dto) {
 		int result = 0;
 		
-		//
+		String query = "UPDATE BOARD SET TITLE = ?, CONTENT = ? WHERE NUM = ?";
 		
+		try {
+			psmt = conn.prepareStatement(query);
+			psmt.setString(1, dto.getTitle());
+			psmt.setString(2, dto.getContent());
+			psmt.setString(3, dto.getNum());
+			
+			result = psmt.executeUpdate();			// 쿼리문 실행
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;								// 결과가 리턴
+	}
+	
+	// 선택한 게시물 삭제
+	public int deletePost(BoardDTO dto) {
+		int result = 0;
+		
+		// 쿼리문 템플릿
+		String query ="DELETE FROM board WHERE num = ?";
+		
+		
+		try {
+			// 쿼리문 완성
+			psmt = conn.prepareStatement(query);
+			psmt.setString(1, dto.getNum());
+			
+			// 쿼리문 실행
+			result = psmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		// 결과반환
 		return result;
 	}
 }

@@ -46,6 +46,8 @@ public class JDBConnection {
 		try {
 			if (rs != null)
 				rs.close();
+			if (stmt !=null)
+				stmt.close();
 			if (psmt != null)
 				psmt.close();
 			if (conn != null)
