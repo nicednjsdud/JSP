@@ -12,7 +12,27 @@
 			return
 		}
 		$.ajax({
+			type : "post",
+			url : "http://localhost:8080/chap14_Ajax/mem",
+			dataType:"text",
+			data:{id: _id}, /* ID를 서블릿으로 전송 */
+			success: function(data,textStatus) {	/* 서버에서 전송된 결과에 따라 메세지 표시 */
+				if(data == 'usable'){
+					$('#message').text('사용할수 있는 아이디 이다.')
+					$('#btnDuplicate').prop("disabled",true)	/* 버튼을 비활성화 시킴 */
+				}
+				else{
+					$('#message').text('중복된 아이디 입니다.')
+				}
+				},
+				error: function(data,textStatus) {
+					alert("에러가 발생했습니다.")
+				},
+				complete: function(data,textStatus) {
+					alert("작업을 완료했습니다.")
+				}
 			
+		
 		})
 	}
 </script>

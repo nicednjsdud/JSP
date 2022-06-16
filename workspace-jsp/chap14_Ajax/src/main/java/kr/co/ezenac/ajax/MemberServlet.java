@@ -1,6 +1,7 @@
 package kr.co.ezenac.ajax;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +14,22 @@ public class MemberServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
 		
+		PrintWriter out = response.getWriter();
+		
+		String id = request.getParameter("id");
+		System.out.println("id = "+id);
+		
+		MemberDAO dao = new MemberDAO();
+		boolean isDuplicated = dao.isDuplicated(id);
+		
+		if(isDuplicated == true) {
+			out.print("not_usable");	// true면 중복된 아이디
+		}
+		else {
+			out.print("usable");
+		}
 	}
 }
