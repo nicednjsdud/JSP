@@ -7,7 +7,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.servlet.ServletContext;
+import javax.sql.DataSource;
+
+
+
+
+
+
+
+
 
 public class JDBConnection {
 	public Connection conn;
@@ -26,19 +38,24 @@ public class JDBConnection {
 			}
 		}
 	public JDBConnection(ServletContext application) {
-		// JDBC 드라이버 로드
-		String driver = application.getInitParameter("OracleDriver");
+		
+		Context initCtx;
 		try {
-			Class.forName(driver);
-
-			// DB연결
-			String url = application.getInitParameter("OracleURL");
-			String id = application.getInitParameter("OracleId");
-			String pwd = application.getInitParameter("OraclePw");
-			conn = DriverManager.getConnection(url,id,pwd);
-			System.out.println("db 연결 성공! - 매개변수 application");
-		} catch (ClassNotFoundException | SQLException e) {
+			// 커넥션 풀 얻기
+			initCtx = new InitialContext();
+			Context ctx = (Context)initCtx.lookup("java:comp/env");
+			DataSource source = (DataSource) ctx.lookup("jdbc/oracle");
+		
+				
+			conn =source.getConnection();
+				
+		
+			System.out.println("db커넥션 풀 연결 성공");
+			
+		
+		} catch (NamingException | SQLException e) {
 			e.printStackTrace();
+			System.out.println("db커넥션 풀 연결 실패");
 		}
 	}
 

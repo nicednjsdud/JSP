@@ -6,6 +6,7 @@ public class BoardDTO {
 	private String idx;
 	private String name;
 	private String content;
+	private String title;
 	private Date postdate;
 	private String ofile;
 	private String sfile;
@@ -64,6 +65,12 @@ public class BoardDTO {
 	}
 	public void setVisitcount(int visitcount) {
 		this.visitcount = visitcount;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	
 	
