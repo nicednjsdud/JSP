@@ -37,7 +37,7 @@ public class JDBConnection {
 				e.printStackTrace();
 			}
 		}
-	public JDBConnection(ServletContext application) {
+	public JDBConnection() {
 		
 		Context initCtx;
 		try {

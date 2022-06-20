@@ -13,8 +13,9 @@ import kr.co.ezenac.model2common.JDBConnection;
 
 public class BoardDAO extends JDBConnection {		// DB 연결을 위한 클래스 상속
 	
-	public BoardDAO(ServletContext application) {	
-		super(application);							
+	
+	public BoardDAO() {	
+								
 	}
 	
 	// (검색 조건에 맞게) 보드 테이블에 저장된 게시물의 개수 반환
@@ -55,14 +56,14 @@ public class BoardDAO extends JDBConnection {		// DB 연결을 위한 클래스 
 			query += "WHERE "+map.get("searchField")+" "+" LIKE '%"
 											+map.get("searchWord")+"%'";
 		}
-		query += " ORDER BY num DESC"
+		query += " ORDER BY ROWNUM DESC"
 				+ ") tb"
 				+ ")"
-				+ "where rNum BETWEEN ? AND ?";
+				+ "where ROWNUM BETWEEN ? AND ?";
 		try {
 			psmt = conn.prepareStatement(query);
 			psmt.setString(1, map.get("start").toString());
-			psmt.setString(1,map.get("end").toString());
+			psmt.setString(2,map.get("end").toString());
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
