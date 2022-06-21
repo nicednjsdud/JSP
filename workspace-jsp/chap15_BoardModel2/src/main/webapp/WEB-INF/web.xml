@@ -39,5 +39,19 @@
   <servlet-mapping>
   	<servlet-name>BoardList</servlet-name>
   	<url-pattern>/board/list.do</url-pattern>
-  </servlet-mapping>  
+  </servlet-mapping>
+   <servlet>
+  	<servlet-name>BoardWrite</servlet-name>
+  	<servlet-class>kr.co.ezenac.model2.board.WriteController</servlet-class>
+  </servlet> 
+  <servlet-mapping>
+  	<servlet-name>BoardWrite</servlet-name>
+  	<url-pattern>/board/write.do</url-pattern>
+  </servlet-mapping> 
+  
+  <!-- 첨부 파일 최대 용량 설정 -->
+   <context-param>
+   		<param-name>maxPostSize</param-name>
+   		<param-value>10240000</param-value>
+   </context-param>
 </web-app>

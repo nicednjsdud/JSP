@@ -74,5 +74,38 @@
 					</c:forEach>
 				</c:otherwise>
 			</c:choose>
+		</table>
+			
+			<!-- 하단메뉴 (페이징,글쓰기)  -->
+		<table border="1" width="90%" >
+				<tr align="center">
+					<td>${map.pagingImag }</td>
+					<td width="100">
+						<button type="button" onclick="location.href='../board/write.do';">글쓰기</button>
+					</td>
+				</tr>
+				
+		</table>
+	</form>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

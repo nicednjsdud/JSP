@@ -1,4 +1,4 @@
-package kr.co.ezenac.model2common;
+package kr.co.ezenac.common;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,39 +18,28 @@ public class JDBConnection {
 	public Statement stmt;
 	public PreparedStatement psmt;
 	public ResultSet rs;
-	
-	
 		public JDBConnection(String driver, String url,String id, String pwd) {
 			try {
 				Class.forName(driver);
 				conn = DriverManager.getConnection(url,id,pwd);
-			} catch (ClassNotFoundException | SQLException e) {
-				
+			} catch (ClassNotFoundException | SQLException e) {			
 				e.printStackTrace();
 			}
 		}
-	public JDBConnection() {
-		
+	public JDBConnection() {	
 		Context initCtx;
 		try {
 			// 커넥션 풀 얻기
 			initCtx = new InitialContext();
 			Context ctx = (Context)initCtx.lookup("java:comp/env");
 			DataSource source = (DataSource) ctx.lookup("jdbc/oracle");
-		
-				
 			conn =source.getConnection();
-				
-		
-			System.out.println("db커넥션 풀 연결 성공");
-			
-		
+			System.out.println("db커넥션 풀 연결 성공");	
 		} catch (NamingException | SQLException e) {
 			e.printStackTrace();
 			System.out.println("db커넥션 풀 연결 실패");
 		}
 	}
-
 	public void close() {
 		try {
 			if (rs != null)
@@ -61,7 +50,6 @@ public class JDBConnection {
 				psmt.close();
 			if (conn != null)
 				conn.close();
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
