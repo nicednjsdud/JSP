@@ -41,7 +41,7 @@
 	
 	// 출력스트림 초기화
 	out.clear();
-	
+	out = pageContext.pushBody();	
 	// response로부터 새로운 출력 스트림 생성
 	OutputStream outputStream = response.getOutputStream();
 	
