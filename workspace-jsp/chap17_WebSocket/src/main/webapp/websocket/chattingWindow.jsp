@@ -89,7 +89,7 @@ request.setCharacterEncoding("utf-8");
 		}
 		
 		// 메세지를 받았을 때 실행
-		webSocket.onmessage=function (event){
+		webSocket.onmessage = function(event){
 			let message = event.data.split(" | ");
 			let sender = message[0];
 			let content = message[1];
@@ -104,7 +104,7 @@ request.setCharacterEncoding("utf-8");
 			chatWindow.innerHTML += "웹소켓 서버가 종료되었습니다. <br>"
 		}
 		webSocket.onerror = function(event){
-			chatWinodw.innerHTML+= "채팅 중 에러가 발생하였씁니다. <br>"
+			chatWindow.innerHTML+= "채팅 중 에러가 발생하였씁니다. <br>"
 		}
 		
 		// 엔터키 입력처리
