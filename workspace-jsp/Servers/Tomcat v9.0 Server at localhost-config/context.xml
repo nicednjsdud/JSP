@@ -42,9 +42,9 @@
     	auth="Conainer" 
     	type="javax.sql.DataSource" 
     	driverClassName="oracle.jdbc.driver.OracleDriver"
-    	url="jdbc:oracle:thin:@localhost:1521:XE"
-    	username="ezen"
-    	password="0824"
+    	url="jdbc:oracle:thin:@BOBWORLD_medium?TNS_ADMIN=/Users/jeong-won-yeong/Wallet/Wallet_BOBWORLD"
+    	username="ADMIN"
+    	password="Dnjsdud123!@#"
     	maxActive="50"
     	maxWait="-1"
     />
