@@ -1019,3 +1019,54 @@ org.eclipse.core.runtime.CoreException: Could not read maven project
 2022-08-13 00:07:00,375 [Worker-185: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/MVC_II/src/main/resources
 2022-08-13 00:07:00,376 [Worker-185: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2022-08-13 00:07:00,376 [Worker-185: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/MVC_II/src/test/resources
+2022-08-19 11:08:31,786 [Worker-8: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2022-08-19 11:09:43,138 [Worker-11: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:09:43,139 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/chap15_BoardModel2/src/main/resources
+2022-08-19 11:09:43,140 [Worker-11: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:09:43,140 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/chap15_BoardModel2/src/test/resources
+2022-08-19 11:09:55,627 [Worker-18: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:09:55,627 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/chap15_BoardModel2/src/main/resources
+2022-08-19 11:09:55,628 [Worker-18: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:09:55,628 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/chap15_BoardModel2/src/test/resources
+2022-08-19 11:09:56,724 [Worker-14: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:09:56,724 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/chap15_BoardModel2/src/main/resources
+2022-08-19 11:09:56,726 [Worker-14: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:09:56,726 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/chap15_BoardModel2/src/test/resources
+2022-08-19 11:10:00,428 [Worker-7: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:10:00,429 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/chap15_BoardModel2/src/main/resources
+2022-08-19 11:10:00,429 [Worker-7: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:10:00,429 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/chap15_BoardModel2/src/test/resources
+2022-08-19 11:10:01,502 [Worker-14: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:10:01,502 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/chap15_BoardModel2/src/main/resources
+2022-08-19 11:10:01,502 [Worker-14: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:10:01,503 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/chap15_BoardModel2/src/test/resources
+2022-08-19 11:21:07,381 [Worker-21: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:21:07,381 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/chap15_BoardModel2/src/main/resources
+2022-08-19 11:21:07,382 [Worker-21: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:21:07,382 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/chap15_BoardModel2/src/test/resources
+2022-08-19 11:22:55,508 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-08-19 11:23:20,794 [Worker-5: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:23:20,795 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/MVC_II/src/main/resources
+2022-08-19 11:23:20,796 [Worker-5: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:23:20,797 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/MVC_II/src/test/resources
+2022-08-19 11:23:21,387 [Worker-5: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:23:21,388 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/chap15_BoardModel2/src/main/resources
+2022-08-19 11:23:21,388 [Worker-5: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:23:21,389 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/chap15_BoardModel2/src/test/resources
+2022-08-19 11:23:41,945 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:23:41,945 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/MVC_II/src/main/resources
+2022-08-19 11:23:41,946 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 11:23:41,946 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/MVC_II/src/test/resources
+2022-08-19 14:20:45,506 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-08-19 14:21:27,409 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 14:21:27,415 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/MVC_II/src/main/resources
+2022-08-19 14:21:27,416 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 14:21:27,416 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/MVC_II/src/test/resources
+2022-08-19 14:21:27,961 [Worker-17: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 14:21:27,961 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/chap15_BoardModel2/src/main/resources
+2022-08-19 14:21:27,962 [Worker-17: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 14:21:27,962 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/chap15_BoardModel2/src/test/resources
+2022-08-19 14:23:56,792 [Worker-22: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 14:23:56,793 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/MVC_II/src/main/resources
+2022-08-19 14:23:56,794 [Worker-22: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-08-19 14:23:56,794 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jeong-won-yeong/Documents/JSP/workspace-jsp/MVC_II/src/test/resources

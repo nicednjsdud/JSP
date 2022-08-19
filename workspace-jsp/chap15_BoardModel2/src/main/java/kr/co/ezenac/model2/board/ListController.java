@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.co.ezenac.model2.util.BoardPage;
 
+@Controller("/board/list.do")
 public class ListController extends HttpServlet {
 	
 	@Override
